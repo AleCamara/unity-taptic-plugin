@@ -30,7 +30,7 @@ namespace TapticPlugin
 
         public static void PrepareSelection()
         {
-            _unityTapticPreprareSelection();
+            _unityTapticPrepareSelection();
         }
 
         public static void TriggerSelection()
