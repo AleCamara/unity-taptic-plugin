@@ -66,7 +66,7 @@ static UnityTapticPlugin * _shared;
 
 - (void) prepareSelection
 {
-    [self.selectionGenerator preapre];
+    [self.selectionGenerator prepare];
 }
 
 - (void) triggerSelection
@@ -74,7 +74,7 @@ static UnityTapticPlugin * _shared;
     [self.selectionGenerator selectionChanged];
 }
 
-- (void) prepareImpact:(UIImpactFeedbackSyle)style
+- (void) prepareImpact:(UIImpactFeedbackStyle)style
 {
     [self.impactGenerators[(int) style] prepare];
 }
