@@ -3,8 +3,12 @@
 //  unity-taptic-plugin
 //
 //  Created by Koki Ibukuro on 12/6/16.
-//  Copyright © 2016 asus4. All rights reserved.
+//  Modified by Ale Cámara in 2019.
 //
+//  Licensed under MIT License.
+//  See LICENSE in root directory.
+//
+
 #ifndef UnityTapticPlugin_h
 #define UnityTapticPlugin_h
 

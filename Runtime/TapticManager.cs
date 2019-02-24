@@ -1,4 +1,12 @@
-﻿using System.Runtime.InteropServices;
+﻿//
+//  Created by Koki Ibukuro on 12/6/16.
+//  Modified by Ale Cámara in 2019.
+//
+//  Licensed under MIT License.
+//  See LICENSE in root directory.
+//
+
+using System.Runtime.InteropServices;
 
 namespace TapticPlugin
 {
