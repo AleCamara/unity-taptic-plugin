@@ -9,7 +9,6 @@ namespace TapticPlugin
         Error
     }
 
-
     public enum ImpactFeedback
     {
         Light,
@@ -19,20 +18,34 @@ namespace TapticPlugin
 
     public static class TapticManager
     {
-
-        public static void Notification(NotificationFeedback feedback)
+        public static void PrepareNotification()
         {
-            _unityTapticNotification((int)feedback);
+            _unityTapticPrepareNotification();
         }
 
-        public static void Impact(ImpactFeedback feedback)
+        public static void TriggerNotification(NotificationFeedback feedback)
         {
-            _unityTapticImpact((int)feedback);
+            _unityTapticTriggerNotification((int)feedback);
         }
 
-        public static void Selection()
+        public static void PrepareSelection()
         {
-            _unityTapticSelection();
+            _unityTapticPreprareSelection();
+        }
+
+        public static void TriggerSelection()
+        {
+            _unityTapticTriggerSelection();
+        }
+
+        public static void PrepareImpact(ImpactFeedback feedback)
+        {
+            _unityTapticPrepareImpact((int)feedback);
+        }
+
+        public static void TriggerImpact(ImpactFeedback feedback)
+        {
+            _unityTapticTriggerImpact((int)feedback);
         }
 
         public static bool IsSupported()
@@ -44,20 +57,26 @@ namespace TapticPlugin
 
 #if UNITY_IPHONE && !UNITY_EDITOR
         [DllImport("__Internal")]
-        private static extern void _unityTapticNotification(int type);
+        private static extern void _unityTapticPrepareNotification();
         [DllImport("__Internal")]
-        private static extern void _unityTapticSelection();
+        private static extern void _unityTapticTriggerNotification(int type);
         [DllImport("__Internal")]
-        private static extern void _unityTapticImpact(int style);
+        private static extern void _unityTapticPrepareSelection();
+        [DllImport("__Internal")]
+        private static extern void _unityTapticTriggerSelection();
+        [DllImport("__Internal")]
+        private static extern void _unityTapticPrepareImpact(int style);
+        [DllImport("__Internal")]
+        private static extern void _unityTapticTriggerImpact(int style);
         [DllImport("__Internal")]
         private static extern bool _unityTapticIsSupported();
 #else
-        private static void _unityTapticNotification(int type) { }
-
-        private static void _unityTapticSelection() { }
-
-        private static void _unityTapticImpact(int style) { }
-
+        private static void _unityTapticPrepareNotification() {}
+        private static void _unityTapticTriggerNotification(int type) {}
+        private static void _unityTapticPrepareSelection() {}
+        private static void _unityTapticTriggerSelection() {}
+        private static void _unityTapticPrepareImpact(int style) {}
+        private static void _unityTapticTriggerImpact(int style) {}
         private static bool _unityTapticIsSupported() { return false; }
 #endif
 

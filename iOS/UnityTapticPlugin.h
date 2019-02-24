@@ -10,14 +10,16 @@
 
 #import <UIKit/UIKit.h>
 
+@interface UnityTapticPlugin : NSObject
+{}
 
-@interface UnityTapticPlugin : NSObject{
-
-}
 + (UnityTapticPlugin*) shared;
-- (void) notification:(UINotificationFeedbackType) type;
-- (void) selection;
-- (void) impact:(UIImpactFeedbackStyle) style;
+- (void) prepareNotification;
+- (void) triggerNotification:(UINotificationFeedbackType) type;
+- (void) prepareSelection;
+- (void) triggerSelection;
+- (void) prepareImpact:(UIImpactFeedbackStyle) style;
+- (void) triggerImpact:(UIImpactFeedbackStyle) style;
 
 + (BOOL) isSupported;
 
