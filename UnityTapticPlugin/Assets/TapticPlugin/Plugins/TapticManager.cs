@@ -35,9 +35,9 @@ namespace TapticPlugin
             _unityTapticSelection();
         }
 
-        public static bool IsSupport()
+        public static bool IsSupported()
         {
-            return _unityTapticIsSupport();
+            return _unityTapticIsSupported();
         }
 
         #region DllImport
@@ -50,7 +50,7 @@ namespace TapticPlugin
         [DllImport("__Internal")]
         private static extern void _unityTapticImpact(int style);
         [DllImport("__Internal")]
-        private static extern bool _unityTapticIsSupport();
+        private static extern bool _unityTapticIsSupported();
 #else
         private static void _unityTapticNotification(int type) { }
 
@@ -58,7 +58,7 @@ namespace TapticPlugin
 
         private static void _unityTapticImpact(int style) { }
 
-        private static bool _unityTapticIsSupport() { return false; }
+        private static bool _unityTapticIsSupported() { return false; }
 #endif
 
         #endregion // DllImport

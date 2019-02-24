@@ -69,7 +69,7 @@ static UnityTapticPlugin * _shared;
     [self.impactGenerators[(int) style] impactOccurred];
 }
 
-+ (BOOL) isSupport {
++ (BOOL) isSupported {
     // http://stackoverflow.com/questions/39564510/check-if-device-supports-uifeedbackgenerator-in-ios-10
     
     // Private API
@@ -100,7 +100,7 @@ extern "C" {
         [[UnityTapticPlugin shared] impact:(UIImpactFeedbackStyle) style];
     }
     
-    bool _unityTapticIsSupport() {
-        return [UnityTapticPlugin isSupport];
+    bool _unityTapticIsSupported() {
+        return [UnityTapticPlugin isSupported];
     }
 }
