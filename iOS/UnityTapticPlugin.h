@@ -19,7 +19,7 @@
 - (void) selection;
 - (void) impact:(UIImpactFeedbackStyle) style;
 
-+ (BOOL) isSupport;
++ (BOOL) isSupported;
 
 @end
 
